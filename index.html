@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Formulario</title>
+</head>
+<body>
+    <h1>VALIDACIÓN DE FORMULARIOS</h1>
+    <section id="contenedor">
+        <form action="datosEnviados.html" method="post" id="formulario" name="formulario">
+            <fieldset class="cuadro">
+            <legend class="titulo">INGRESE SUS DATOS</legend>
+            <img src="validar.png" alt="">
+                <div class="contenido">
+                    
+                    <div class="caja_texto">
+                        <input type="text" class="campo_formulario" placeholder="Nombres" required="" name="nombres" id="nombres">
+                        <label for="nombres" class="formulario_etiqueta">Nombres</label>
+                    </div>
+                    <div class="caja_texto">
+                        <input type="text" class="campo_formulario" placeholder="Apellidos" required="" name="apellidos" id="apellidos">
+                        <label for="apellidos" class="formulario_etiqueta">Apellidos</label>
+                    </div>
+                    <div class="caja_texto">
+                        <input type="text" class="campo_formulario" placeholder="Direccion" required="" name="direccion" id="direccion">
+                        <label for="direccion" class="formulario_etiqueta">Dirección</label>
+                    </div>
+                    <div class="caja_texto">
+                        <input type="email" class="campo_formulario" placeholder="Correo" required="" name="correo" id="correo">
+                        <label for="correo" class="formulario_etiqueta">Correo Electrónico</label>
+                    </div>
+                    <div class="caja_texto">
+                        <input type="password" class="campo_formulario" placeholder="Contraseña" required="" name="contra" id="contra">
+                        <label for="contra" class="formulario_etiqueta">Contraseña</label>
+                    </div>
+                    <div class="caja_texto">
+                        <input type="text" class="campo_formulario" placeholder="Teléfono" required="" name="telefono" id="telefono">
+                        <label for="telefono" class="formulario_etiqueta">Teléfono/Celular</label>
+                    </div><br>
+                    <!-- sexo -->
+                    <div class="btn">
+                        <p>Sexo</p>
+                        <input name="btn-radio" id="btn-masculino" type="radio">
+                        <label for="btn-masculino">Masculino</label>
+                        <input name="btn-radio" id="btn-femenino" type="radio">
+                        <label for="btn-femenino">Femenino</label>
+                        <input name="btn-radio" id="btn-otros" type="radio">
+                        <label for="btn-otros">Otros</label>
+                    </div><br>
+                    <div class="fecha">
+                        <label for="edad">Fecha de Nacimiento</label><br/>
+                        <input type="date" name="edad" id="edad"><br/>
+                    </div><br>
+                </div>
+            </fieldset>
+            <br/>
+            <label class="comentario" for="comentario">Escriba un comentario:</label><br/>
+			<textarea name="comentario" id="comentario" cols="70" rows="10" maxlength="1000" onkeypress="calcular()" onkeyup="calcular()"></textarea><br/>
+			<p>Le quedan <span id="contador-char">1000</span> de 1000 caracteres.</p>
+			<br/>
+			<button type="submit" name="enviar" id="enviar" class="enviar"><span>Enviar</span></button>
+            <button type="reset" id="limpiar" name="limpiar" class="limpiar"><span>Limpiar Formulario</span></button>
+        </form>
+    </section>
+    <script async type="text/javascript" src="js.js"></script>
+</body>
+</html>

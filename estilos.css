@@ -1,0 +1,368 @@
+body{
+    background-color: #330000;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 400'%3E%3Cdefs%3E%3CradialGradient id='a' cx='396' cy='281' r='514' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23D18'/%3E%3Cstop offset='1' stop-color='%23330000'/%3E%3C/radialGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='400' y1='148' x2='400' y2='333'%3E%3Cstop offset='0' stop-color='%23FA3' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23FA3' stop-opacity='0.5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='800' height='400'/%3E%3Cg fill-opacity='0.5'%3E%3Ccircle fill='url(%23b)' cx='267.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='532.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='400' cy='30' r='300'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+	font-size: 1.5em;
+	text-align: center;
+	color: white;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  font-size: 35px;
+}
+
+#contenedor{
+  display: flex;
+  justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.titulo{
+  color: #c9b8b8;
+  margin-left: 20px;
+  font-size: 25px;
+}
+
+.contenido{
+  margin-left: 22px;
+}
+
+.cuadro{
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.cuadro img {
+  height: 400px;
+  margin-left: 15px;
+}
+
+/* diseño de los input */
+.caja_texto{
+  position: relative;
+  padding: 20px 0 0;
+  width: 100%;
+  max-width: 250px;
+}
+
+.campo_formulario{
+  font-family: inherit;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 20px;
+  color: #fff;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+.campo_formulario::placeholder{
+  color: transparent;
+}
+
+.campo_formulario:placeholder-shown ~ .formulario_etiqueta {
+  font-size: 17px;
+  cursor: text;
+  top: 20px;
+}
+
+.formulario_etiqueta{
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: #c9b8b8;
+  pointer-events: none;
+}
+
+.campo_formulario:focus{
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #116399, #38caef);
+  border-image-slice: 1;
+}
+
+.campo_formulario:focus ~ .formulario_etiqueta{
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: #7d92df;
+  font-weight: 700;  
+}  
+/* reset input */
+.campo_formulario:required, .campo_formulario:invalid{
+  box-shadow: none;
+}
+
+/* botones de genero */
+p{
+  display: flex;
+  align-items: center;
+  color: #c9b8b8;
+}
+
+.btn{
+  display: flex;
+  flex-direction: row;
+  font-family: Arial, Helvetica, sans-serif; 
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+  gap: 18px;
+}
+
+.btn input[type="radio"]{
+  display: none;
+}
+  
+.btn label{
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #212121;
+  border-radius: 5px;
+  margin-right: 12px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn label:before{
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn input[type="radio"]:checked + label:before{
+  background-color: green;
+  top: 0;
+}
+
+.btn input[type="radio"]:checked + label{
+  background-color: royalblue;
+  color: #fff;
+  border-color: rgb(129, 235, 129);
+  animation: radio-translate 0.5s ease-in-out;
+}
+
+@keyframes radio-translate{
+  0%{
+    transform: translateX(0);
+  }
+  
+  50%{
+    transform: translateY(-10px);
+  }
+  
+  100%{
+    transform: translateX(0);
+  }
+}
+
+/* fecha de nacimiento */
+.fecha{
+  color: #c9b8b8;
+  display: flex;
+  align-items: center;
+}
+
+.fecha label {
+  margin-right: 10px;
+}
+
+input[type="date"]{
+  color: white;
+  background: #212121 url(icono.png);
+  border-color: white;
+  border-radius: 7px;
+  background-size: 18px;
+  background-repeat: no-repeat;
+  background-position: 95%;
+  padding: 3px;
+  font-size: 16px;
+  font-weight: 999;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator{
+  opacity: 0;
+}
+
+/* comentario */
+.comentario{
+  color: #c9b8b8;
+  font-size: 25px;
+}
+
+textarea{
+  border-radius: 10px;
+  border: 3px solid #c9b8b8;
+}
+
+/* botones finales */
+button{
+  outline: none;
+  cursor: pointer;
+  border: none;
+  padding: 0.9rem 2rem;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  position: relative;
+  display: inline-block;
+  letter-spacing: 0.05rem;
+  font-weight: 700;
+  font-size: 17px;
+  border-radius: 500px;
+  overflow: hidden;
+  background: #66ff66;
+  color: ghostwhite;
+}
+
+button span {
+  position: relative;
+  z-index: 10;
+  transition: color 0.4s;
+}
+
+button:hover span {
+  color: black;
+}
+
+button::before,
+button::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+button::before {
+  content: "";
+  background: #000;
+  width: 120%;
+  left: -10%;
+  transform: skew(30deg);
+  transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+button:hover::before {
+  transform: translate3d(100%, 0, 0);
+}
+
+.enviar{
+  margin-bottom: 15px;
+}
+
+.enviar,
+.limpiar {
+    margin-right: 20px;
+}
+
+/* limpiar */
+.limpiar{
+  outline: none;
+  cursor: pointer;
+  border: none;
+  padding: 0.9rem 2rem;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  position: relative;
+  display: inline-block;
+  letter-spacing: 0.05rem;
+  font-weight: 700;
+  font-size: 17px;
+  border-radius: 500px;
+  overflow: hidden;
+  background: #ee1a12;
+  color: ghostwhite;
+}
+
+.limpiar span {
+  position: relative;
+  z-index: 10;
+  transition: color 0.4s;
+}
+
+.limpiar:hover span {
+  color: white;
+}
+
+.limpiar::before,
+.limpiar::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.limpiar::before {
+  content: "";
+  background: #000;
+  width: 120%;
+  left: -10%;
+  transform: skew(30deg);
+  transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+.limpiar:hover::before {
+  transform: translate3d(100%, 0, 0);
+}
+
+@media only screen and (max-width: 600px) {
+  #contenedor {
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px;
+  }
+
+  .campo_formulario {
+      width: 100%;
+  }
+
+  .btn {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .fecha {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  textarea {
+      width: 100%;
+  }
+
+  .enviar,
+  .limpiar {
+      width: 100%;
+  }
+}
